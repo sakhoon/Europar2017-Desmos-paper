@@ -4,7 +4,7 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{hyperref}
-
+\usepackage{subcaption}         % include subfigure
 \bibliographystyle{splncs03}
 
 \begin{document}
@@ -49,17 +49,55 @@ In this paper, we describe the Desmos cluster that consists of 32 hybrid nodes c
 \subsection{Scalability of classical MD on supercomputers}
 
 
-\section{Angara interconnect}
+\section{Cluster ``Desmos''}
+
+\begin{table}[h]
+\caption{\label{tab:systems}Desmos cluster system configuration.}
+\begin{center}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|p{33mm}|p{80mm}|}
+\hline
+\textbf{Server} & Supermicro SuperServer 1018GR-T\\
+\hline
+\textbf{Processor} & Xeon E5-1650 v3 (6 cores, 3.0 GHz)\\
+\hline
+\textbf{GPU} & Nvidia GeForce GTX 1070 (1920C, 8 GB GDDR5)\\
+\hline
+\textbf{Memory} & DDR4 8 GB\\
+\hline
+\textbf{Number of nodes} & 32\\
+\hline
+\textbf{Interconnect} & Angara 4D-torus $4\times2\times2\times2$\\
+\hline
+\textbf{Operating system} & SLES 11 SP4 \\
+\hline
+\textbf{Compiler} & Intel Parallel Studio XE 2017 \\
+\hline
+\textbf{MPI} & Angara MPI (based on MPICH 3.0.4)\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{GPU Testing}
+The Nvidia GTX 1070 cards have no memory errors correction
+(ECC) in contrast to the professional accelerators. For this reason
+it was necessary to make sure that there is no hardware memory errors in each GPU.
+
+
+Testing of each GPU was performed using MemtestG80 \cite{Haque:2010:HDS:1844765.1845231}.
+Testing was performed on the available memory of the accelerator (8 GB) and wasted at least
+4 hours (depending on the number of test iterations). Testing time was chosen on the basis of the results obtained in the paper \cite{Kutzner2015BestBF} and restrictions 
+imposed by the number of cards and the total time of the test the entire batch. There are no errors detected during the testing process.
+
+\subsection{Angara Interconnect}
 %FIXME to dmvkt: BG, Cray, Tofu, Extoll
 
-%FIXME to sakhoon: вставить ссылки на литературу
-Angara interconnect is a Russian-designed communication network with torus topology. Inteconnect chip was developed by JSC NICEVT and manufactured by TSMC with 65 nm process. The chip supports deadlock-free adaptive routing based on bubble flow control [],  direction ordered routing [] and initial and final hops [] for fault tolerance.
+Angara interconnect is a Russian-designed communication network with torus topology. Inteconnect chip was developed by JSC NICEVT and manufactured by TSMC with 65 nm process. The chip supports deadlock-free adaptive routing based on bubble flow control \cite{Puente:1999:ABR:850940.852882},  direction ordered routing \cite{Adiga:2005:BGT:1665957.1665963}, \cite{Scott96thecray} and initial and final hops \cite{Scott96thecray} for fault tolerance.
 
 Each node has a dedicated memory region available for remote access (read, write, atomic operations) from other nodes to support the OpenSHMEM and PGAS languages. Multiple parallel programming models are supported, including MPI, OpenMP, OpenSHMEM.
 
 The network adapter is a PCI Express extension card that is connected to the adjacent nodes by up to 6 cables (or up to 8 with an extension card). The following topologies are supported: ring, 2D, 3D and 4D torus (or grid). 
-
-
 
 
 \begin{figure}
@@ -68,14 +106,13 @@ The network adapter is a PCI Express extension card that is connected to the adj
 \caption{The scheme of the ``Angara'' chip.}
 \end{figure}
 
-\subsection{Hardware}
 
-\subsection{Software stack (MPI)}
+%\subsection{Software stack (MPI)}
 
-Including analytic estimates that show no need for extra MPI tuning below 256 nodes
+%Including analytic estimates that show no need for extra MPI tuning below 256 nodes
 
 
-\section{Cluster ``Desmos''}
+
 
 Description
 
@@ -89,14 +126,38 @@ Energy consumption
 \caption{The photo of one ``Desmos'' node and the photo of the rear side of the rack with cabling.}
 \end{figure}
 
-\begin{figure}[h]
+%\begin{figure}[h]
+%\centering
+%  %\includegraphics[width=0.8\textwidth]{fig.pdf}
+%\caption{The scheme of the links between 32 cluster nodes (4x2x2x2).}
+%\end{figure}
+
+
+\section{Experimental Results}
+
+\begin{figure}[h!]
 \centering
-  %\includegraphics[width=0.8\textwidth]{fig.pdf}
-\caption{The scheme of the links between 32 cluster nodes (4x2x2x2).}
+   \begin{subfigure}{0.48\textwidth}
+  \includegraphics[width=1\textwidth]{img/osu_latency.pdf}\caption{}
+  \end{subfigure}
+  \begin{subfigure}{0.48\textwidth}
+  \includegraphics[width=1\textwidth]{img/barrier_ppn=6.pdf}\caption{}
+   \end{subfigure}
+\caption{(a) Communication latency between two adjacent Desmos nodes (OSU Micro-Benchmarks 5.3.2). (b) Intel MPI Benchmarks 2017 MPI\_Barrier, processes per node (ppn) = 6.}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+   \begin{subfigure}{0.48\textwidth}
+  \includegraphics[width=1\textwidth]{img/allreduce_ppn=6_size=16.pdf}\caption{}
+  \end{subfigure}
+  \begin{subfigure}{0.48\textwidth}
+  \includegraphics[width=1\textwidth]{img/allreduce_ppn=6_size=262144.pdf}\caption{}
+   \end{subfigure}
+\caption{FIXME: REMOVE?? Intel MPI Benchmarks 2017 MPI\_Allreduce, ppn = 6 (a) message size = 16 bytes (b) message size = 256 KB. }
+\end{figure}
 
-\section{MD benchmarks}
+\subsection{MD Benchmarks}
 
 ApoA1 model (100000 atoms) with GROMACS – comparison with BlueGene, Cray and other large machines.
 
@@ -122,6 +183,6 @@ Comparison ns/day vs hardware cost.
 The work of the JIHT team (N.K., V.S. and V.V.) was supported by the grant No.\,14-50-00124 of the Russian Science Foundation (this work includes the development of the cluster node architecture, the preliminary benchmarks, the purchase of the ``Desmos'' cluster). The NICEVT team developed the ``Angara'' interconnect and the corresponding low-level software stack, built and tuned the ``Desmos'' cluster).
 
 
-%\bibliography{library}
+\bibliography{references}
 
 \end{document}

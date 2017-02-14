@@ -93,7 +93,10 @@ imposed by the number of cards and the total time of the test the entire batch. 
 \subsection{Angara Interconnect}
 %FIXME to dmvkt: BG, Cray, Tofu, Extoll
 
-Angara interconnect is a Russian-designed communication network with torus topology. Inteconnect chip was developed by JSC NICEVT and manufactured by TSMC with 65 nm process. The chip supports deadlock-free adaptive routing based on bubble flow control \cite{Puente:1999:ABR:850940.852882},  direction ordered routing \cite{Adiga:2005:BGT:1665957.1665963}, \cite{Scott96thecray} and initial and final hops \cite{Scott96thecray} for fault tolerance.
+Angara interconnect is a Russian-designed communication network with torus topology. Inteconnect chip was developed by JSC NICEVT and manufactured by TSMC with 65 nm process. 
+
+In Angara architecture are used some priciples from IBM Blue Gene L/P, Cray Seastar2/Seastar2+ torus interconnects. 
+The Angara chip supports deadlock-free adaptive routing based on bubble flow control \cite{Puente:1999:ABR:850940.852882},  direction ordered routing \cite{Adiga:2005:BGT:1665957.1665963}, \cite{Scott96thecray} and initial and final hops \cite{Scott96thecray} for fault tolerance.
 
 Each node has a dedicated memory region available for remote access (read, write, atomic operations) from other nodes to support the OpenSHMEM and PGAS languages. Multiple parallel programming models are supported, including MPI, OpenMP, OpenSHMEM.
 

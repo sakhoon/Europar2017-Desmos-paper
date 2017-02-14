@@ -48,6 +48,13 @@ In this paper, we describe the Desmos cluster that consists of 32 hybrid nodes c
 
 \subsection{Scalability of classical MD on supercomputers}
 
+A lot of work on redesigning software for HPC with GPUs and testing new hardware is done by this moment. MD codes are also become rewritten for running on CPU+coprocessor machines which allow to investigate real size and timescales in MD models. Authors of~\cite{Sun2012} show how to double the performance of running MD biomolecular model in NAMD~\cite{NAMD} with GPUs on Jaguar Cray XK6 machine with Gemini interconnect. In~\cite{Bernaschi2015} it is described how to to achieve an excellent efficiency using cluster with GPUs by using suitable memory access patterns and mechanisms like CUDA streams and profiling tools. The errors propagation in GPU systems is studied in~\cite{Li2016}.
+
+The Mont-Blanc project is aimed to developing of the supercomputer based on ARM cores~\cite{Rajovic2016}. The main advantages of this project are flexibility in designing an application-specific system-on-chip, in turn providing the possibility in balancing performance, energy-efficiency, and cost.
+
+The topology of connections between supercomputer nodes also influences on the scaling of the current simulation. The comparison of torus and fat tree topologies is done in~\cite{Corsetti2014} based on SIESTA electronic structure code~\cite{SIESTA} for \textit{ab initio} MD on six large-scale supercomputers. Torus topologies are showed to demonstrate a better scalability to large system sizes than those implementing fat tree topologies. Torus topology is implemented in 512-node Anton~2 MD supercomputer which allows to achieve simulation rates of multiple microseconds of physical time per day for systems with millions of atoms~\cite{Shaw2014}.
+
+High MD code optimization for concrete supercomputer can provide better large-scaling performance than use of wide spread MD packages such as NAMD~\cite{NAMD}, GROMACS~\cite{GROMACS}, CHARMM~\cite{CHARMM}, LAMMPS and AMBER~\cite{AMBER} which can be installed almost on any machine.  In~\cite{Pennycook2013}, authors demonstrate novel code-level and algorithmic improvements to Sandia's miniMD benchmark~\cite{SandiaMD} and show that the usage of Intel Xeon Phi coprocessor provides up to 2x performance increase. The optimizations of MD code ls1mardyn are done for Intel Sandy Bridge processor including vectorization and shared-memory parallelization which allow to simulate liquid of multi-trillion Lennard-Jones particles on 146016 Cores of SuperMUC. Special MD code is developed in~\cite{Yoshii2015} called MODYLAS for machines like K-computer with torus topology. MODYLAS allows to investigate 100 ns-long MD calculation of 10 million-atom systems within 3 days (5 ms/step) by using machines as K-computer. The optimized for Intel Xeon Phi vectorization scheme is developed and applied to speed up LAMMPS calculations in~\cite{Hohnerbach2016}. The accuracy of MD with single precision is also studied.
 
 \section{Cluster ``Desmos''}
 
@@ -160,25 +167,44 @@ Energy consumption
 \caption{FIXME: REMOVE?? Intel MPI Benchmarks 2017 MPI\_Allreduce, ppn = 6 (a) message size = 16 bytes (b) message size = 256 KB. }
 \end{figure}
 
-\subsection{MD Benchmarks}
+\newpage
+\subsection{ApoA1 benchmark}
 
-ApoA1 model (100000 atoms) with GROMACS – comparison with BlueGene, Cray and other large machines.
+\begin{table}[h]
+\caption{\label{tab:supercomputers}Info about different clusters.}
+\begin{center}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|p{33mm}|p{80mm}|}
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
-Large LJ system with LAMMPS on 32 nodes – influence on special decomposition mapping on torus topology.
+The Apolipoprotein A1 in water ($\sim$100k atoms) system (ApoA1) is used to compare Desmos cluster with other supercomputers. The performances of different clusters based on ApoA1 test are shown in Fig.~\ref{ApoA1} in terms of seconds per 1 atom for 1 MD step and declared peak performance (3.236~TFlops per node consist of 6 core Xeon performance which is 0.336~TFlops and GPU performance which is estimated as 2.9~TFlops). The dotted line shows ideal scalability with performance 0.1 MFlops/atom/step.
 
-Comparison ns/day vs hardware cost.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{img/compar_comp.eps}
+\caption{\label{ApoA1}ApoA1 benchmark. Timestep per 1 atom per 1 MD step vs $R_{peak}$. The comparison of different systems.}
+\end{figure}
+
+Despite different architectures and MD software, this data can be used to analyze the applicability of some supercomputer systems for biomolecular MD system. Black and green lines with dotes show the performance of CPU cluster with Intel Xeon nodes that consist of 28 cores~\cite{Smirnov2016}. New Desmos machine (purple filled stars) with GROMACS shows better scalability then CRAY XK6 with NVIDIA X2090~\cite{Sun2012} (red filled squares) and K Computer SPARC64 Vlllfx with NAMD [?]. It also outgo benchmarks ran on IBM BlueGene/P and BlueGene/Q~\cite{Kumar2013} (blue open and filled points correspondingly). 
+
+Green stars are 27 times replicated ApoA1 benchmarks on Desmos machine. This result shows the continuous scaling with larger number atoms per node. It indicates the possibility for adding new nodes to Desmos without lack of performance.
+
+\subsection{MEM and RIB benchmarks}
+
+The work~\cite{Kutzner2015} gives a good guidelines for achieving the best performance for a minimal price in 2015. Authors compare different configurations of supercomputers using two wide spread biological benchmarks (are available at~\cite{bench}): membrane channel protein embedded in a lipid bilayer surrounded by water (MEM, $\sim $100k atoms) and ions and bacterial ribosome in water with ions (RIB, $\sim$2M atoms). GROMACS package is used for all tests. The longer simulations than in~\cite{Kutzner2015} are performed to obtain the best performance.
 
 \begin{figure}[h]
 \centering
-  %\includegraphics[width=0.8\textwidth]{fig.pdf}
-\caption{ApoA1 benchmark. Timestep per 1 atom per 1 MD step vs $R_{peak}$. The comparison of different systems.}
+\includegraphics[width=0.8\textwidth]{img/best_bang.eps}
+\caption{\label{BestBang}The cost of hardware vs achieved performance for MEM and RIB benchmarks. Dashed lines show ideal scaling. Comparison with the published results for GROMACS in~\cite{Kutzner2015}.}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-  %\includegraphics[width=0.8\textwidth]{fig.pdf}
-\caption{Time vs cost. Comparison with the published results for GROMACS.}
-\end{figure}
+We compare the results obtained on Desmos cluster with the best choice of~\cite{Kutzner2015}: the nodes consist of 2 sockets Xeon E5-2670v2 with 780Ti and connected via InfiniBand QDR. The costs of hardware in euros are displayed on Y axis and the performance in ns/day is shown on X axis in Fig.~\ref{BestBang}. The numbers show the amount of nodes used. Grey lines indicate ideal scaling.
+
+Desmos (red color) shows better weak scaling for MEM benchmark than system configuration provided by~\cite{Kutzner2015} (blue color). The saturation is achieved after 20 nodes which corresponds to the small amount of atoms per node. In the case of RIB benchmark, Desmos demonstrates ideal scaling after 16 nodes which shows that the productivity can be increased with more number of nodes.
 
 
 \section{Conclusions}
@@ -186,6 +212,6 @@ Comparison ns/day vs hardware cost.
 The work of the JIHT team (N.K., V.S. and V.V.) was supported by the grant No.\,14-50-00124 of the Russian Science Foundation (this work includes the development of the cluster node architecture, the preliminary benchmarks, the purchase of the ``Desmos'' cluster). The NICEVT team developed the ``Angara'' interconnect and the corresponding low-level software stack, built and tuned the ``Desmos'' cluster).
 
 
-\bibliography{references}
+\bibliography{references,references_MD}
 
 \end{document}

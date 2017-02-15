@@ -6,6 +6,7 @@
 \usepackage{hyperref}
 \usepackage{subcaption}         % include subfigure
 \bibliographystyle{splncs03}
+\usepackage{color} % color selection
 
 \begin{document}
 
@@ -101,6 +102,24 @@ imposed by the number of cards and the total time of the test the entire batch. 
 %FIXME to dmvkt: BG, Cray, Tofu, Extoll
 
 Angara interconnect is a Russian-designed communication network with torus topology. Inteconnect chip was developed by JSC NICEVT and manufactured by TSMC with 65 nm process. 
+
+\begin{table}[h]
+\caption{\label{tab:interconnect}Interconnects \colorbox{yellow}{FIXME! BW??}.}
+\begin{center}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|p{33mm}|p{20mm}|p{20mm}|p{20mm}|p{20mm}|p{20mm}|}
+\hline
+\textbf{Interconnect}           & BG/Q   & Cray Gemini & Tofu2    & EXTOLL & Angara \\
+\hline
+\textbf{Topology} 				& 5D-tor & 3D-tor      & 6D-tor ??& 3D-tor & 4D-tor\\
+\hline
+\textbf{Link bandwidth, Gbps}   & 16     & 75          & 100     & 100    & n/a\\
+\hline
+\textbf{MPI latency, ms}        & 2.5    & 1.5         & ??		 & 0.85	  & 0.85\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 In Angara architecture are used some priciples from IBM Blue Gene L/P, Cray Seastar2/Seastar2+ torus interconnects. 
 The Angara chip supports deadlock-free adaptive routing based on bubble flow control \cite{Puente:1999:ABR:850940.852882},  direction ordered routing \cite{Adiga:2005:BGT:1665957.1665963}, \cite{Scott96thecray} and initial and final hops \cite{Scott96thecray} for fault tolerance.

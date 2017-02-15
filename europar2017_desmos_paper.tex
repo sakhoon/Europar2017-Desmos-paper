@@ -17,7 +17,7 @@ Vladimir~V.~Stegailov\inst{1},
 Alexander~Agarkov\inst{2},
 Sergey~Biryukov\inst{2},
 Timur~Ismagilov\inst{2},
-Nikolay~Kondratyuk\inst{1}\inst{3},
+Nikolai~Kondratyuk\inst{1}\inst{3}\inst{4},
 Evgeny~Kushtanov\inst{2},
 Dmitry~Makagon\inst{2},
 Anatoly~Mukosey\inst{2},
@@ -30,7 +30,8 @@ Vyacheslav~Vecher\inst{1}\inst{3}
 %
 \institute{Joint Institute for High Temperatures of RAS, Moscow, Russia\\
 \and NICEVT, Moscow, Russia\\
-\and Moscow Institute of Physics and Technology, Dolgoprudny, Russia\
+\and Moscow Institute of Physics and Technology, Dolgoprudny, Russia\\
+\and National Research University Higher School of Economics, Moscow, Russia
 %FIXME Владимир, может быть, не очень хорошо здесь указывать почту из ВШЭ?
 \email{v.stegailov@hse.ru}
 }
@@ -38,7 +39,7 @@ Vyacheslav~Vecher\inst{1}\inst{3}
 \maketitle
 
 \begin{abstract}
-In this paper, we describe the Desmos cluster that consists of 32 hybrid nodes connected by a low-latency high-bandwidth torus interconnect. The interconnect is based on the Angara NIC that supports 3D and 4D torus network topology. We describe the corresponding ASIC structure and the software stack (shmem and MPI including). Firstly, this cluster is aimed at cost-effective classical molecular dynamics calculations. We present strong and weak scaling benchmarks for GROMACS and LAMMPS. Secondly, the cluster serves as a test bed for the Angara interconnect and verifies its ability to unite large MPP systems and to speed-up effectively MPI-based applications.
+In this paper, we describe the Desmos cluster that consists of 32 hybrid nodes connected by a low-latency high-bandwidth torus interconnect. This cluster is aimed at cost-effective classical molecular dynamics calculations. We present strong scaling benchmarks for GROMACS and compare the results with other HPC systems. Moreover, the cluster serves as a test bed for the Angara interconnect and verifies its ability to unite large MPP systems speeding-up effectively MPI-based applications. The interconnect is based on the Angara NIC that supports 3D and 4D torus network topologies. We describe the interconnect presenting typical MPI benchmarks.  
 \end{abstract}
 
 

@@ -16,7 +16,7 @@ Vladimir~V.~Stegailov\inst{1},
 Alexander~Agarkov\inst{2},
 Sergey~Biryukov\inst{2},
 Timur~Ismagilov\inst{2},
-Nikolai~Kondratyuk\inst{1}\inst{3},
+Nikolay~Kondratyuk\inst{1}\inst{3},
 Evgeny~Kushtanov\inst{2},
 Dmitry~Makagon\inst{2},
 Anatoly~Mukosey\inst{2},
@@ -185,7 +185,7 @@ The Apolipoprotein A1 in water ($\sim$100k atoms) system (ApoA1) is used to comp
 \caption{\label{ApoA1}ApoA1 benchmark. Timestep per 1 atom per 1 MD step vs $R_{peak}$. The comparison of different systems.}
 \end{figure}
 
-Despite different architectures and MD software, this data can be used to analyze the applicability of some supercomputer systems for biomolecular MD system. Black and green lines with dotes show the performance of CPU cluster with Intel Xeon nodes that consist of 28 cores~\cite{Smirnov2016}. New Desmos machine (purple filled stars) with GROMACS shows better scalability then CRAY XK6 with NVIDIA X2090~\cite{Sun2012} (red filled squares) and K Computer SPARC64 Vlllfx with NAMD [?]. It also outgo benchmarks ran on IBM BlueGene/P and BlueGene/Q~\cite{Kumar2013} (blue open and filled points correspondingly). 
+Despite different architectures and MD software, this data can be used to analyze the applicability of some supercomputer systems for biomolecular MD system. Black and green lines with dotes show the performance of CPU cluster with Intel Xeon nodes that consist of 28 cores~\cite{Smirnov2016}. New Desmos machine (purple filled stars) with GROMACS shows better scalability then CRAY XK6 with NVIDIA X2090~\cite{Sun2012} (red filled squares) and K Computer SPARC64 Vlllfx with NAMD [?]. It also outgoes benchmarks ran on IBM BlueGene/P and BlueGene/Q~\cite{Kumar2013} (blue open and filled points correspondingly). 
 
 Green stars are 27 times replicated ApoA1 benchmarks on Desmos machine. This result shows the continuous scaling with larger number atoms per node. It indicates the possibility for adding new nodes to Desmos without lack of performance.
 

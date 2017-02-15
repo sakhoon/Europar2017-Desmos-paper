@@ -1,0 +1,151 @@
+\begin{thebibliography}{10}
+
+\bibitem{Sun2012}
+Yanhua Sun et~al.
+\newblock {Optimizing fine-grained communication in a biomolecular simulation
+  application on Cray XK6}.
+\newblock {\em International Conference for High Performance Computing,
+  Networking, Storage and Analysis, SC}, 2012.
+
+\bibitem{NAMD}
+James~C. Phillips et~al.
+\newblock Scalable molecular dynamics with namd.
+\newblock {\em Journal of Computational Chemistry}, 26(16):1781--1802, 2005.
+
+\bibitem{Bernaschi2015}
+{Colloquium: Large scale simulations on GPU clusters}.
+\newblock {\em The European Physical Journal B}, 88(6):158, 2015.
+
+\bibitem{Li2016}
+Guanpeng Li and Karthik Pattabiraman.
+\newblock {Understanding Error Propagation in GPGPU Applications}.
+\newblock (November), 2016.
+
+\bibitem{Rajovic2016}
+Nikola Rajovic et~al.
+\newblock {The Mont-Blanc prototype : An Alternative Approach for HPC Systems}.
+\newblock {\em SC16 Supercomputing}, (November):444--455, 2016.
+
+\bibitem{Corsetti2014}
+Fabiano Corsetti.
+\newblock {Performance analysis of electronic structure codes on HPC systems: A
+  case study of SIESTA}.
+\newblock {\em PLoS ONE}, 9(4), 2014.
+
+\bibitem{SIESTA}
+M.~Soler José et~al.
+\newblock The siesta method for ab initio order- n materials simulation.
+\newblock {\em Journal of Physics: Condensed Matter}, 14(11):2745, 2002.
+
+\bibitem{Shaw2014}
+David~E. Shaw et~al.
+\newblock {Anton 2: Raising the Bar for Performance and Programmability in a
+  Special-Purpose Molecular Dynamics Supercomputer}.
+\newblock {\em International Conference for High Performance Computing,
+  Networking, Storage and Analysis, SC}, 2015-Janua(January):41--53, 2014.
+
+\bibitem{GROMACS}
+Sander Pronk et~al.
+\newblock Gromacs 4.5: a high-throughput and highly parallel open source
+  molecular simulation toolkit.
+\newblock {\em Bioinformatics}, 29(7):845, 2013.
+
+\bibitem{CHARMM}
+B.~R. Brooks et~al.
+\newblock Charmm: The biomolecular simulation program.
+\newblock {\em Journal of Computational Chemistry}, 30(10):1545--1614, 2009.
+
+\bibitem{AMBER}
+Romelia Salomon-Ferrer et~al.
+\newblock An overview of the amber biomolecular simulation package.
+\newblock {\em Wiley Interdisciplinary Reviews: Computational Molecular
+  Science}, 3(2):198--210, 2013.
+
+\bibitem{Pennycook2013}
+Simon~J. Pennycook et~al.
+\newblock {Exploring SIMD for molecular dynamics, using Intel Xeon processors
+  and Intel Xeon Phi coprocessors}.
+\newblock {\em Proceedings - IEEE 27th International Parallel and Distributed
+  Processing Symposium, IPDPS 2013}, pages 1085--1097, 2013.
+
+\bibitem{SandiaMD}
+M.~A. Heroux et~al.
+\newblock Improving performance via mini- applications.
+\newblock {\em Sandia National Laboratories, Albuquerque, NM, Tech. Rep.
+  SAND2009-5574, 2009.}
+
+\bibitem{Yoshii2015}
+Noriyuki Yoshii et~al.
+\newblock {MODYLAS: A highly parallelized general-purpose molecular dynamics
+  simulation program}.
+\newblock {\em International Journal of Quantum Chemistry}, 115(5):342--348,
+  2015.
+
+\bibitem{Hohnerbach2016}
+Markus H{\"{o}}hnerbach, Ahmed~E. Ismail, and Paolo Bientinesi.
+\newblock {The Vectorization of the Tersoff Multi-Body Potential: An Exercise
+  in Performance Portability}.
+\newblock {\em Proceedings of the International Conference for High Performance
+  Computing, Networking, Storage and Analysis(SC '16)}, page Article No.7,
+  2016.
+
+\bibitem{Haque:2010:HDS:1844765.1845231}
+Imran~S. Haque and Vijay~S. Pande.
+\newblock Hard data on soft errors: A large-scale assessment of real-world
+  error rates in gpgpu.
+\newblock In {\em Proceedings of the 2010 10th IEEE/ACM International
+  Conference on Cluster, Cloud and Grid Computing}, CCGRID '10, pages 691--696,
+  Washington, DC, USA, 2010. IEEE Computer Society.
+
+\bibitem{Kutzner2015BestBF}
+Carsten Kutzner, Szil{\'a}rd P{\'a}ll, Martin Fechner, Ansgar Esztermann,
+  Bert~L. de~Groot, and Helmut Grubmuller.
+\newblock Best bang for your buck: Gpu nodes for gromacs biomolecular
+  simulations.
+\newblock In {\em Journal of Computational Chemistry}, 2015.
+
+\bibitem{Puente:1999:ABR:850940.852882}
+V.~Puente, R.~Beivide, J.~A. Gregorio, J.~M. Prellezo, J.~Duato, and C.~Izu.
+\newblock Adaptive bubble router: A design to improve performance in torus
+  networks.
+\newblock In {\em Proceedings of the 1999 International Conference on Parallel
+  Processing}, ICPP '99, pages 58--, Washington, DC, USA, 1999. IEEE Computer
+  Society.
+
+\bibitem{Adiga:2005:BGT:1665957.1665963}
+N.~R. Adiga, M.~A. Blumrich, D.~Chen, P.~Coteus, A.~Gara, M.~E. Giampapa,
+  P.~Heidelberger, S.~Singh, B.~D. Steinmacher-Burow, T.~Takken, M.~Tsao, and
+  P.~Vranas.
+\newblock Blue gene/l torus interconnection network.
+\newblock {\em IBM J. Res. Dev.}, 49(2):265--276, March 2005.
+
+\bibitem{Scott96thecray}
+Steven~L. Scott and et~al.
+\newblock The cray t3e network: Adaptive routing in a high performance 3d
+  torus, 1996.
+
+\bibitem{Smirnov2016}
+G.~S. Smirnov and V.~V. Stegailov.
+\newblock Efficiency of classical molecular dynamics algorithms on
+  supercomputers.
+\newblock {\em Mathematical Models and Computer Simulations}, 8(6):734--743,
+  2016.
+
+\bibitem{Kumar2013}
+Sameer Kumar, Yanhua Sun, and Laximant~V. Kale.
+\newblock Acceleration of an asynchronous message driven programming paradigm
+  on ibm blue gene/q.
+\newblock In {\em Proceedings of the 2013 IEEE 27th International Symposium on
+  Parallel and Distributed Processing}, IPDPS '13, pages 689--699, Washington,
+  DC, USA, 2013. IEEE Computer Society.
+
+\bibitem{Kutzner2015}
+Carsten Kutzner et~al.
+\newblock Best bang for your buck: Gpu nodes for gromacs biomolecular
+  simulations.
+\newblock {\em Journal of Computational Chemistry}, 36(26):1990--2008, 2015.
+
+\bibitem{bench}
+\url{http://www.mpibpc.mpg.de/grubmueller/kutzner/publications}.
+
+\end{thebibliography}

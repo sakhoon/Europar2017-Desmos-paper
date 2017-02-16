@@ -60,28 +60,30 @@ High MD code optimization for concrete supercomputer can provide better large-sc
 \section{Cluster Desmos}
 
 \begin{table}[h]
-\caption{\label{tab:systems}Desmos cluster system configuration.}
+\caption{\label{tab:systems}Clusters system configuration.}
 \begin{center}
 \renewcommand{\arraystretch}{1}
-\begin{tabular}{|p{33mm}|p{80mm}|}
+\begin{tabular}{|p{30mm}|p{45mm}|p{45mm}|}
 \hline
-\textbf{Server} & Supermicro SuperServer 1018GR-T\\
+\textbf{Cluster} & \textbf{Desmos} & \textbf{Polytekhnik} \\
+\hline \hline
+\textbf{Server} & Supermicro SuperServer 1018GR-T & RSC Tornado \\
 \hline
-\textbf{Processor} & Xeon E5-1650 v3 (6 cores, 3.0 GHz)\\
+\textbf{Processor} & Xeon E5-1650 v3 (6 cores, 3.0 GHz) & 2x Xeon E5-2697 v3 (2x14 cores, 2.6 GHz)\\
 \hline
-\textbf{GPU} & Nvidia GeForce GTX 1070 (1920C, 8 GB GDDR5)\\
+\textbf{GPU} & Nvidia GeForce GTX 1070 (1920C, 8 GB GDDR5) & --- \\
 \hline
-\textbf{Memory} & DDR4 8 GB\\
+\textbf{Memory} & DDR4 8 GB & DDR4 64 GB\\
 \hline
-\textbf{Number of nodes} & 32\\
+\textbf{Number of nodes} & 32 & 612 \\
 \hline
-\textbf{Interconnect} & Angara 4D-torus $4\times2\times2\times2$\\
+\textbf{Interconnect} & Angara 4D-torus $4\times2\times2\times2$ & Infiniband 4x FDR 2:1\\
 \hline
-\textbf{Operating system} & SLES 11 SP4 \\
+\textbf{Operating system} & SLES 11 SP4 & CentOS 7.0.1406 \\
 \hline
-\textbf{Compiler} & Intel Parallel Studio XE 2017 \\
+\textbf{Compiler} & Intel Parallel Studio XE 2017 & Intel Parallel Studio XE 2016 \\
 \hline
-\textbf{MPI} & Angara MPI (based on MPICH 3.0.4)\\
+\textbf{MPI} & Angara MPI (based on MPICH 3.0.4) & Intel MPI 5.1.2 \\
 \hline
 \end{tabular}
 \end{center}
@@ -102,24 +104,6 @@ imposed by the number of cards and the total time of the test the entire batch. 
 %FIXME to dmvkt: BG, Cray, Tofu, Extoll
 
 Angara interconnect is a Russian-designed communication network with torus topology. Inteconnect chip was developed by JSC NICEVT and manufactured by TSMC with 65 nm process. 
-
-\begin{table}[h]
-\caption{\label{tab:interconnect}Interconnects \colorbox{yellow}{FIXME! BW??}.}
-\begin{center}
-\renewcommand{\arraystretch}{1}
-\begin{tabular}{|p{33mm}|p{20mm}|p{20mm}|p{20mm}|p{20mm}|p{20mm}|}
-\hline
-\textbf{Interconnect}           & BG/Q   & Cray Gemini & Tofu2    & EXTOLL & Angara \\
-\hline
-\textbf{Topology} 				& 5D-tor & 3D-tor      & 6D-tor ??& 3D-tor & 4D-tor\\
-\hline
-\textbf{Link bandwidth, Gbps}   & 16     & 75          & 100     & 100    & n/a\\
-\hline
-\textbf{MPI latency, ms}        & 2.5    & 1.5         & ??		 & 0.85	  & 0.85\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
 
 In Angara architecture are used some priciples from IBM Blue Gene L/P, Cray Seastar2/Seastar2+ torus interconnects. The very similar project is EXTOLL \cite{HPCA-2015-NeuwirthFNB}.
 The Angara chip supports deadlock-free adaptive routing based on bubble flow control \cite{Puente:1999:ABR:850940.852882},  direction ordered routing \cite{Adiga:2005:BGT:1665957.1665963}, \cite{Scott96thecray} and initial and final hops \cite{Scott96thecray} for fault tolerance.
@@ -147,20 +131,20 @@ The network adapter is a PCI Express extension card that is connected to the adj
   \includegraphics[width=1\textwidth]{img/osu_latency.pdf}\caption{}
   \end{subfigure}
   \begin{subfigure}{0.48\textwidth}
-  \includegraphics[width=1\textwidth]{img/barrier_ppn=6.pdf}\caption{}
+  \includegraphics[width=1\textwidth]{img/barrier_ppn4.pdf}\caption{}
    \end{subfigure}
-\caption{(a) Communication latency between two adjacent Desmos nodes (OSU Micro-Benchmarks 5.3.2). (b) Intel MPI Benchmarks 2017 MPI\_Barrier, processes per node (ppn) = 6.}
+\caption{(a) Communication latency between two adjacent Desmos nodes (OSU Micro-Benchmarks 5.3.2). (b) Intel MPI Benchmarks, MPI\_Barrier, processes per node (ppn) = 4.}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
    \begin{subfigure}{0.48\textwidth}
-  \includegraphics[width=1\textwidth]{img/allreduce_ppn=6_size=16.pdf}\caption{}
+  \includegraphics[width=1\textwidth]{img/alltoall_ppn=4_size=16.pdf}\caption{}
   \end{subfigure}
   \begin{subfigure}{0.48\textwidth}
-  \includegraphics[width=1\textwidth]{img/allreduce_ppn=6_size=262144.pdf}\caption{}
+  \includegraphics[width=1\textwidth]{img/alltoall_ppn=4_size=262144.pdf}\caption{}
    \end{subfigure}
-\caption{FIXME: REMOVE?? Intel MPI Benchmarks 2017 MPI\_Allreduce, ppn = 6 (a) message size = 16 bytes (b) message size = 256 KB. }
+\caption{Intel MPI Benchmarks MPI\_Alltoall, ppn = 4 (a) message size = 16 bytes (b) message size = 256 KB. }
 \end{figure}
 
 \newpage
@@ -206,6 +190,8 @@ Desmos (red color) shows better weak scaling for MEM benchmark than system confi
 \section{Conclusions}
 
 The work of the JIHT team (N.K., V.S. and V.V.) was supported by the grant No.\,14-50-00124 of the Russian Science Foundation (this work includes the development of the cluster node architecture, the preliminary benchmarks, the purchase of the Desmos cluster). The NICEVT team developed the ``Angara'' interconnect and the corresponding low-level software stack, built and tuned the Desmos cluster).
+
+The results of the work were obtained using computational resources of Peter the Great Sainte-Petersburg Polytechnic University Supercomputing Center (\url{http://www.spbstu.ru}).
 
 \textbf{\textit{Comment for reviewers}}. Unfortunately, Angara interconnect bandwidth is the subject of non-disclosure agreement of Angara project.
 

@@ -32,14 +32,13 @@ Vyacheslav~Vecher\inst{1}\inst{3}
 \and NICEVT, Moscow, Russia\\
 \and Moscow Institute of Physics and Technology, Dolgoprudny, Russia\\
 \and National Research University Higher School of Economics, Moscow, Russia
-%FIXME Владимир, может быть, не очень хорошо здесь указывать почту из ВШЭ?
 \email{v.stegailov@hse.ru}
 }
 
 \maketitle
 
 \begin{abstract}
-In this paper, we describe the Desmos cluster that consists of 32 hybrid nodes connected by a low-latency high-bandwidth torus interconnect. This cluster is aimed at cost-effective classical molecular dynamics calculations. We present strong scaling benchmarks for GROMACS and compare the results with other HPC systems. Moreover, the cluster serves as a test bed for the Angara interconnect and verifies its ability to unite large MPP systems speeding-up effectively MPI-based applications. The interconnect is based on the Angara NIC that supports 3D and 4D torus network topologies. We describe the interconnect presenting typical MPI benchmarks.  
+In this paper, we describe the Desmos cluster that consists of 32 hybrid nodes connected by a low-latency high-bandwidth Angara torus interconnect. This cluster is aimed at cost-effective classical molecular dynamics calculations. We present strong scaling benchmarks for GROMACS and compare the results with other HPC systems. \colorbox{yellow}{I suggest to remove the next sentence}. \colorbox{yellow}{I think it is our internal ''kitchen''}, \colorbox{yellow}{otherwise european scientists will think that we have Napoleon's plans :)}. Moreover, the cluster serves as a test bed for the Angara interconnect and verifies its ability to unite large MPP systems speeding-up effectively MPI-based applications. The interconnect is based on the Angara NIC that supports 3D and 4D torus network topologies. We describe the interconnect presenting typical MPI benchmarks.  
 \end{abstract}
 
 
@@ -58,7 +57,7 @@ The topology of connections between supercomputer nodes also influences on the s
 
 High MD code optimization for concrete supercomputer can provide better large-scaling performance than use of wide spread MD packages such as NAMD~\cite{NAMD}, GROMACS~\cite{GROMACS}, CHARMM~\cite{CHARMM}, LAMMPS and AMBER~\cite{AMBER} which can be installed almost on any machine.  In~\cite{Pennycook2013}, authors demonstrate novel code-level and algorithmic improvements to Sandia's miniMD benchmark~\cite{SandiaMD} and show that the usage of Intel Xeon Phi coprocessor provides up to 2x performance increase. The optimizations of MD code ls1mardyn are done for Intel Sandy Bridge processor including vectorization and shared-memory parallelization which allow to simulate liquid of multi-trillion Lennard-Jones particles on 146016 Cores of SuperMUC. Special MD code is developed in~\cite{Yoshii2015} called MODYLAS for machines like K-computer with torus topology. MODYLAS allows to investigate 100 ns-long MD calculation of 10 million-atom systems within 3 days (5 ms/step) by using machines as K-computer. The optimized for Intel Xeon Phi vectorization scheme is developed and applied to speed up LAMMPS calculations in~\cite{Hohnerbach2016}. The accuracy of MD with single precision is also studied.
 
-\section{Cluster ``Desmos''}
+\section{Cluster Desmos}
 
 \begin{table}[h]
 \caption{\label{tab:systems}Desmos cluster system configuration.}
@@ -122,46 +121,23 @@ Angara interconnect is a Russian-designed communication network with torus topol
 \end{center}
 \end{table}
 
-In Angara architecture are used some priciples from IBM Blue Gene L/P, Cray Seastar2/Seastar2+ torus interconnects. 
+In Angara architecture are used some priciples from IBM Blue Gene L/P, Cray Seastar2/Seastar2+ torus interconnects. The very similar project is EXTOLL \cite{HPCA-2015-NeuwirthFNB}.
 The Angara chip supports deadlock-free adaptive routing based on bubble flow control \cite{Puente:1999:ABR:850940.852882},  direction ordered routing \cite{Adiga:2005:BGT:1665957.1665963}, \cite{Scott96thecray} and initial and final hops \cite{Scott96thecray} for fault tolerance.
 
 Each node has a dedicated memory region available for remote access (read, write, atomic operations) from other nodes to support the OpenSHMEM and PGAS languages. Multiple parallel programming models are supported, including MPI, OpenMP, OpenSHMEM.
 
 The network adapter is a PCI Express extension card that is connected to the adjacent nodes by up to 6 cables (or up to 8 with an extension card). The following topologies are supported: ring, 2D, 3D and 4D torus (or grid). 
 
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
-  %\includegraphics[width=0.8\textwidth]{fig.pdf}
-\caption{The scheme of the ``Angara'' chip.}
+   \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=0.8\textwidth]{img/angara_chip.png}\caption{}
+   \end{subfigure}
+   \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=1\textwidth]{img/desmos_backpanel.jpg}\caption{}
+   \end{subfigure}
+\caption{(a) The ``Angara'' chip. (b) The photo of the rear side of the rack with cabling.}
 \end{figure}
-
-
-%\subsection{Software stack (MPI)}
-
-%Including analytic estimates that show no need for extra MPI tuning below 256 nodes
-
-
-
-
-Description
-
-Early HPL performance
-
-Energy consumption
-
-\begin{figure}[h]
-\centering
-  %\includegraphics[width=0.8\textwidth]{fig.pdf}
-\caption{The photo of one ``Desmos'' node and the photo of the rear side of the rack with cabling.}
-\end{figure}
-
-%\begin{figure}[h]
-%\centering
-%  %\includegraphics[width=0.8\textwidth]{fig.pdf}
-%\caption{The scheme of the links between 32 cluster nodes (4x2x2x2).}
-%\end{figure}
-
 
 \section{Experimental Results}
 
@@ -229,7 +205,10 @@ Desmos (red color) shows better weak scaling for MEM benchmark than system confi
 
 \section{Conclusions}
 
-The work of the JIHT team (N.K., V.S. and V.V.) was supported by the grant No.\,14-50-00124 of the Russian Science Foundation (this work includes the development of the cluster node architecture, the preliminary benchmarks, the purchase of the ``Desmos'' cluster). The NICEVT team developed the ``Angara'' interconnect and the corresponding low-level software stack, built and tuned the ``Desmos'' cluster).
+The work of the JIHT team (N.K., V.S. and V.V.) was supported by the grant No.\,14-50-00124 of the Russian Science Foundation (this work includes the development of the cluster node architecture, the preliminary benchmarks, the purchase of the Desmos cluster). The NICEVT team developed the ``Angara'' interconnect and the corresponding low-level software stack, built and tuned the Desmos cluster).
+
+\textbf{\textit{Comment for reviewers}}. Unfortunately, Angara interconnect bandwidth is the subject of non-disclosure agreement of Angara project.
+
 
 
 \bibliography{references,references_MD}

@@ -3,3 +3,6 @@
 *.out
 *.swp
 *.gz
+*.bbl
+*.blg
+*.dvi

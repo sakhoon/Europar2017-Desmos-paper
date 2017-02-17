@@ -36,22 +36,21 @@ pages = {1085--1097},
 title = {{Exploring SIMD for molecular dynamics, using Intel Xeon processors and Intel Xeon Phi coprocessors}},
 year = {2013}
 }
+
 @article{Corsetti2014,
-archivePrefix = {arXiv},
-arxivId = {arXiv:1402.1120v2},
-author = {Corsetti, Fabiano},
-doi = {10.1371/journal.pone.0095390},
-eprint = {arXiv:1402.1120v2},
-file = {:Users/nickkond/Desktop/Work/!articles/Corsetti - 2014 - Performance analysis of electronic structure codes on HPC systems A case study of SIESTA.pdf:pdf},
-issn = {19326203},
-journal = {PLoS ONE},
-mendeley-groups = {HPC},
-number = {4},
-pmid = {24748385},
-title = {{Performance analysis of electronic structure codes on HPC systems: A case study of SIESTA}},
-volume = {9},
-year = {2014}
+    author = {Corsetti, Fabiano},
+    journal = {PLOS ONE},
+    publisher = {Public Library of Science},
+    title = {Performance Analysis of Electronic Structure Codes on {HPC} Systems: A Case Study of {SIESTA}},
+    year = {2014},
+    month = {04},
+    volume = {9},
+    url = {http://dx.doi.org/10.1371%2Fjournal.pone.0095390},
+    pages = {1-8},
+    number = {4},
+    doi = {10.1371/journal.pone.0095390}
 }
+
 @article{Shaw2014,
 author = {Shaw, David E. and others},
 doi = {10.1109/SC.2014.9},
@@ -66,6 +65,7 @@ title = {{Anton 2: Raising the Bar for Performance and Programmability in a Spec
 volume = {2015-Janua},
 year = {2014}
 }
+
 @article{Bernaschi2015,
 doi = {10.1140/epjb/e2015-60180-8},
 file = {:Users/nickkond/Desktop/Work/!articles/Bernaschi, Bisson, Fatica - 2015 - Colloquium Large scale simulations on GPU clusters.pdf:pdf},
@@ -79,6 +79,8 @@ url = {http://link.springer.com/10.1140/epjb/e2015-60180-8},
 volume = {88},
 year = {2015}
 }
+
+
 @article{Yoshii2015,
 author = {Yoshii, Noriyuki and others},
 doi = {10.1002/qua.24841},
@@ -93,6 +95,20 @@ title = {{MODYLAS: A highly parallelized general-purpose molecular dynamics simu
 volume = {115},
 year = {2015}
 }
+
+@article{MODYLAS-2013,
+author = {Andoh, Yoshimichi and Yoshii, Noriyuki and Fujimoto, Kazushi and Mizutani, Keisuke and Kojima, Hidekazu and Yamada, Atsushi and Okazaki, Susumu and Kawaguchi, Kazutomo and Nagao, Hidemi and Iwahashi, Kensuke and Mizutani, Fumiyasu and Minami, Kazuo and Ichikawa, Shin-ichi and Komatsu, Hidemi and Ishizuki, Shigeru and Takeda, Yasuhiro and Fukushima, Masao},
+title = {{MODYLAS}: A Highly Parallelized General-Purpose Molecular Dynamics Simulation Program for Large-Scale Systems with Long-Range Forces Calculated by Fast Multipole Method ({FMM}) and Highly Scalable Fine-Grained New Parallel Processing Algorithms},
+journal = {Journal of Chemical Theory and Computation},
+volume = {9},
+number = {7},
+pages = {3201-3209},
+year = {2013},
+doi = {10.1021/ct400203a},
+}
+
+
+
 @article{Rajovic2016,
 author = {Rajovic, Nikola and others},
 file = {:Users/nickkond/Desktop/Work/!articles/Rajovic et al. - 2016 - The Mont-Blanc prototype An Alternative Approach for HPC Systems.pdf:pdf},
@@ -105,20 +121,24 @@ title = {{The Mont-Blanc prototype : An Alternative Approach for HPC Systems}},
 url = {https://www.computer.org/csdl/proceedings/sc/2016/8815/00/8815a444.pdf},
 year = {2016}
 }
-@article{Hohnerbach2016,
-archivePrefix = {arXiv},
-arxivId = {1607.02904},
-author = {H{\"{o}}hnerbach, Markus and Ismail, Ahmed E. and Bientinesi, Paolo},
-eprint = {1607.02904},
-file = {:Users/nickkond/Desktop/Work/!articles/H{\"{o}}hnerbach, Ismail, Bientinesi - 2016 - The Vectorization of the Tersoff Multi-Body Potential An Exercise in Performance Portability.pdf:pdf},
-isbn = {9781467388153},
-journal = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis(SC '16)},
-mendeley-groups = {HPC},
-pages = {Article No.7},
-title = {{The Vectorization of the Tersoff Multi-Body Potential: An Exercise in Performance Portability}},
-url = {http://arxiv.org/abs/1607.02904},
-year = {2016}
+
+@inproceedings{Hohnerbach2016,
+ author = {H\"{o}hnerbach, Markus and Ismail, Ahmed E. and Bientinesi, Paolo},
+ title = {The Vectorization of the Tersoff Multi-body Potential: An Exercise in Performance Portability},
+ booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+ series = {SC '16},
+ year = {2016},
+ isbn = {978-1-4673-8815-3},
+ location = {Salt Lake City, Utah},
+ pages = {7:1--7:13},
+ articleno = {7},
+ numpages = {13},
+ url = {http://dl.acm.org/citation.cfm?id=3014904.3014914},
+ acmid = {3014914},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
 }
+
 @article{Li2016,
 author = {Li, Guanpeng and Pattabiraman, Karthik},
 file = {:Users/nickkond/Desktop/Work/!articles/Li, Pattabiraman - 2016 - Understanding Error Propagation in GPGPU Applications.pdf:pdf},
@@ -134,8 +154,9 @@ author = {Heroux, M. A. and others},
 title = {Improving Performance via Mini- applications},
 journal = {Sandia National Laboratories, Albuquerque, NM, Tech. Rep. SAND2009-5574, 2009.}
 }
+
 @article {Kutzner2015,
-author = {Kutzner, Carsten and others},
+author = {Kutzner, Carsten and Pall, Szilard and Fechner, Martin and Esztermann, Ansgar and de Groot, Bert L. and Grubmuller, Helmut},
 title = {Best bang for your buck: GPU nodes for GROMACS biomolecular simulations},
 journal = {Journal of Computational Chemistry},
 volume = {36},
@@ -147,6 +168,8 @@ pages = {1990--2008},
 keywords = {molecular dynamics, GPU, parallel computing, energy efficiency, benchmark, MD, hybrid parallelization},
 year = {2015},
 }
+
+
 @manual{bench,
 note = {\url{http://www.mpibpc.mpg.de/grubmueller/kutzner/publications}}
 }
@@ -213,19 +236,6 @@ doi = {10.1093/bioinformatics/btt055},
 URL = { + http://dx.doi.org/10.1093/bioinformatics/btt055},
 eprint = {/oup/backfile/Content_public/Journal/bioinformatics/29/7/10.1093/bioinformatics/btt055/2/btt055.pdf}
 }
-@article{Smirnov2016,
-author="Smirnov, G. S.
-and Stegailov, V. V.",
-title="Efficiency of classical molecular dynamics algorithms on supercomputers",
-journal="Mathematical Models and Computer Simulations",
-year="2016",
-volume="8",
-number="6",
-pages="734--743",
-issn="2070-0490",
-doi="10.1134/S2070048216060156",
-url="http://dx.doi.org/10.1134/S2070048216060156"
-}
 @inproceedings{Sun2012,
  author = {Sun, Yanhua and others},
  title = {Optimizing Fine-grained Communication in a Biomolecular Simulation Application on Cray XK6},
@@ -258,3 +268,341 @@ url="http://dx.doi.org/10.1134/S2070048216060156"
  address = {Washington, DC, USA},
  keywords = {Blue Gene/Q, Charm++, message-driven, L2Atomic Queue, many to many, communication thread},
 }
+
+
+@book{Heinecke-etal-MD-Book-2015,
+  title={Supercomputing for Molecular Dynamics Simulations},
+  author={Heinecke, Alexander and Eckhardt, Wolfgang and Horsch, Martin and Bungartz, Hans-Joachim},
+  year={2015},
+  publisher={Springer}
+}
+
+@incollection{MD-on-SuperMUC-2013,
+year={2013},
+isbn={978-3-642-38749-4},
+booktitle={Supercomputing},
+volume={7905},
+series={Lecture Notes in Computer Science},
+editor={Kunkel, Julian Martin and Ludwig, Thomas and Meuer, Hans Werner},
+doi={10.1007/978-3-642-38750-0_1},
+title={591 {TFLOPS} Multi-trillion Particles Simulation on {SuperMUC}},
+publisher={Springer Berlin Heidelberg},
+keywords={molecular dynamics simulations; highly scalable simulation; vectorization; Intel AVX; SuperMUC},
+author={Eckhardt, Wolfgang and Heinecke, Alexander and Bader, Reinhold and Brehm, Matthias and Hammer, Nicolay and Huber, Herbert and Kleinhenz, Hans-Georg and Vrabec, Jadran and Hasse, Hans and Horsch, Martin and Bernreuther, Martin and Glass, Colin W. and Niethammer, Christoph and Bode, Arndt and Bungartz, Hans-Joachim},
+pages={1-12},
+language={English}
+}
+
+@article{Piana-Klepeis-Shaw-2014,
+title = "Assessing the accuracy of physical models used in protein-folding simulations: quantitative evidence from long molecular dynamics simulations ",
+journal = "Current Opinion in Structural Biology ",
+volume = "24",
+number = "0",
+pages = "98 - 105",
+year = "2014",
+issn = "0959-440X",
+doi = "http://dx.doi.org/10.1016/j.sbi.2013.12.006",
+author = "Stefano Piana and John L Klepeis and David E Shaw"
+}
+
+
+@incollection{Sutmann2002,
+year={2002},
+isbn={3-00-009057-6},
+booktitle={Quantum Simulations of Complex Many-Body Systems: From Theory to Algorithms},
+volume={10},
+series={NIC Series},
+editor={J. Grotendorst and D. Marx and A. Muramatsu},
+title={Classical Molecular Dynamics},
+publisher={John von Neumann Institute for Computing, Julich},
+author={Godehard Sutmann},
+pages={211-254},
+language={English}
+}
+
+
+@article{BegauSutmann-2015,
+title = "Adaptive dynamic load-balancing with irregular domain decomposition for particle simulations ",
+journal = "Computer Physics Communications ",
+volume = "190",
+number = "",
+pages = "51 - 61",
+year = "2015",
+note = "",
+issn = "0010-4655",
+doi = "http://dx.doi.org/10.1016/j.cpc.2015.01.009",
+url = "http://www.sciencedirect.com/science/article/pii/S0010465515000181",
+author = "Christoph Begau and Godehard Sutmann",
+keywords = "Load-balance",
+keywords = "Parallel computing",
+keywords = "Molecular dynamics "
+}
+
+@article{Zhakhovskii-etal-2004,
+  author    = {Vasilii Zhakhovskii and
+               Katsunobu Nishihara and
+               Yuko Fukuda and
+               Shinji Shimojo},
+  title     = {A New Dynamical Domain Decomposition Method for Parallel Molecular
+               Dynamics Simulation on Grid},
+  journal   = {CoRR},
+  volume    = {cs.DC/0405086},
+  year      = {2004},
+  url       = {http://arxiv.org/abs/cs.DC/0405086},
+  timestamp = {Mon, 05 Dec 2011 18:03:23 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/cs-DC-0405086},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+
+@article {Wyrzykowski-3DMPDATAtoGPU-adaptation-2016,
+author = {Rojek, Krzysztof and Wyrzykowski, Roman and Kuczynski, Lukasz},
+title = {Systematic adaptation of stencil-based {3D MPDATA} to {GPU} architectures},
+journal = {Concurrency and Computation: Practice and Experience},
+publisher = {John Wiley & Sons, Ltd},
+issn = {1532-0634},
+url = {http://dx.doi.org/10.1002/cpe.3970},
+doi = {10.1002/cpe.3970},
+pages = {n/a--n/a},
+keywords = {GPU, Kepler and Maxwell architectures, stencils, MPDATA, CUDA, auto-tuning},
+year = {2016},
+}
+
+@article{Berendsen199543,
+title = "GROMACS: A message-passing parallel molecular dynamics implementation ",
+journal = "Computer Physics Communications ",
+volume = "91",
+number = "1–3",
+pages = "43 - 56",
+year = "1995",
+note = "",
+issn = "0010-4655",
+doi = "http://dx.doi.org/10.1016/0010-4655(95)00042-E",
+url = "http://www.sciencedirect.com/science/article/pii/001046559500042E",
+author = "H.J.C. Berendsen and D. van der Spoel and R. van Drunen",
+keywords = "Molecular dynamics",
+keywords = "Parallel computing "
+}
+
+@article{LAMMPS1995,
+author = {Plimpton, Steve},
+doi = {10.1006/jcph.1995.1039},
+issn = {00219991},
+journal = {J. Comput. Phys.},
+month = mar,
+number = {1},
+pages = {1--19},
+publisher = {Academic Press Professional, Inc.},
+title = {{Fast Parallel Algorithms for Short-Range Molecular Dynamics}},
+type = {Journal article},
+volume = {117},
+year = {1995}
+}
+
+@article{Brown-etal-lammpsGPU-2011,
+title = "Implementing molecular dynamics on hybrid high performance computers --- short range forces ",
+journal = "Computer Physics Communications ",
+volume = "182",
+number = "4",
+pages = "898 - 911",
+year = "2011",
+note = "",
+issn = "0010-4655",
+doi = "http://dx.doi.org/10.1016/j.cpc.2010.12.021",
+url = "http://www.sciencedirect.com/science/article/pii/S0010465510005102",
+author = "W. Michael Brown and Peng Wang and Steven J. Plimpton and Arnold N. Tharrington",
+keywords = "Molecular dynamics",
+keywords = "GPU",
+keywords = "Hybrid parallel computing "
+}
+
+@article{Brown-etal-lammpsGPU-2012,
+title = "Implementing molecular dynamics on hybrid high performance computers --- {P}article-particle particle-mesh ",
+journal = "Computer Physics Communications ",
+volume = "183",
+number = "3",
+pages = "449 - 459",
+year = "2012",
+note = "",
+issn = "0010-4655",
+doi = "http://dx.doi.org/10.1016/j.cpc.2011.10.012",
+url = "http://www.sciencedirect.com/science/article/pii/S0010465511003444",
+author = "W. Michael Brown and Axel Kohlmeyer and Steven J. Plimpton and Arnold N. Tharrington",
+keywords = "Molecular dynamics",
+keywords = "Electrostatics",
+keywords = "Particle mesh",
+keywords = "GPU",
+keywords = "Hybrid parallel computing "
+}
+
+@ARTICLE{Trott-etal-USER-CUDA-2010,
+   author = {{Trott}, C.~R. and {Winterfeld}, L. and {Crozier}, P.~S.},
+    title = "{General-purpose molecular dynamics simulations on {GPU}-based clusters}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1009.4330},
+ primaryClass = "cond-mat.mtrl-sci",
+ keywords = {Condensed Matter - Materials Science, Computer Science - Distributed, Parallel, and Cluster Computing, Computer Science - Performance, Physics - Computational Physics},
+     year = 2010,
+    month = sep,
+    url = "http://arxiv.org/abs/1009.4330",
+}
+
+@article{CarterEdwards2014,
+title = "Kokkos: Enabling manycore performance portability through polymorphic memory access patterns ",
+journal = "Journal of Parallel and Distributed Computing ",
+volume = "74",
+number = "12",
+pages = "3202 - 3216",
+year = "2014",
+note = "Domain-Specific Languages and High-Level Frameworks for High-Performance Computing ",
+issn = "0743-7315",
+doi = "http://dx.doi.org/10.1016/j.jpdc.2014.07.003",
+url = "http://www.sciencedirect.com/science/article/pii/S0743731514001257",
+author = "H. Carter Edwards and Christian R. Trott and Daniel Sunderland",
+keywords = "Parallel computing",
+keywords = "Thread parallelism",
+keywords = "Manycore",
+keywords = "GPU",
+keywords = "Performance portability",
+keywords = "Multidimensional array",
+keywords = "Mini-application "
+}
+
+@article{Abraham201519,
+title = "GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers ",
+journal = "SoftwareX ",
+volume = "1–2",
+number = "",
+pages = "19 - 25",
+year = "2015",
+note = "",
+issn = "2352-7110",
+doi = "http://dx.doi.org/10.1016/j.softx.2015.06.001",
+url = "http://www.sciencedirect.com/science/article/pii/S2352711015000059",
+author = "Mark James Abraham and Teemu Murtola and Roland Schulz and Szil\'{a}rd P\'{a}ll and Jeremy C. Smith and Berk Hess and Erik Lindahl",
+keywords = "Molecular dynamics",
+keywords = "GPU",
+keywords = "SIMD",
+keywords = "Free energy "
+}
+
+@article {Ohmura20130387,
+	author = {Ohmura, Itta and Morimoto, Gentaro and Ohno, Yousuke and Hasegawa, Aki and Taiji, Makoto},
+	title = {{MDGRAPE-4}: a special-purpose computer system for molecular dynamics simulations},
+	volume = {372},
+	number = {2021},
+	year = {2014},
+	doi = {10.1098/rsta.2013.0387},
+	publisher = {The Royal Society},
+	issn = {1364-503X},
+	URL = {http://rsta.royalsocietypublishing.org/content/372/2021/20130387},
+	eprint = {http://rsta.royalsocietypublishing.org/content/372/2021/20130387.full.pdf},
+	journal = {Philosophical Transactions of the Royal Society of London A: Mathematical, Physical and Engineering Sciences}
+}
+
+@Article{StegailovSmirnov-MatModCompSim2016,
+author="Smirnov, G. S.
+and Stegailov, V. V.",
+title="Efficiency of classical molecular dynamics algorithms on supercomputers",
+journal="Mathematical Models and Computer Simulations",
+year="2016",
+volume="8",
+number="6",
+pages="734--743",
+issn="2070-0490",
+doi="10.1134/S2070048216060156",
+url="http://dx.doi.org/10.1134/S2070048216060156"
+}
+
+@Inbook{StegailovOrekhovSmirnov-PaCT2015,
+author="Stegailov, Vladimir V.
+and Orekhov, Nikita D.
+and Smirnov, Grigory S.",
+editor="Malyshkin, Victor",
+chapter="HPC Hardware Efficiency for Quantum and Classical Molecular Dynamics",
+title="Parallel Computing Technologies: 13th International Conference, PaCT 2015, Petrozavodsk, Russia, August 31-September 4, 2015, Proceedings",
+year="2015",
+publisher="Springer International Publishing",
+address="Cham",
+pages="469--473",
+isbn="978-3-319-21909-7",
+doi="10.1007/978-3-319-21909-7_45",
+url="http://dx.doi.org/10.1007/978-3-319-21909-7_45"
+}
+
+@Article{NormanStegailov2013,
+author="Norman, G. E.
+and Stegailov, V. V.",
+title="Stochastic theory of the classical molecular dynamics method",
+journal="Mathematical Models and Computer Simulations",
+year="2013",
+volume="5",
+number="4",
+pages="305--333",
+issn="2070-0490",
+doi="10.1134/S2070048213040108",
+url="http://dx.doi.org/10.1134/S2070048213040108"
+}
+
+@INPROCEEDINGS{NikolskiyStegailovVecher-HPCS2016, 
+author={V. P. Nikolskiy and V. V. Stegailov and V. S. Vecher}, 
+booktitle={2016 International Conference on High Performance Computing Simulation (HPCS)}, 
+title={Efficiency of the Tegra K1 and X1 systems-on-chip for classical molecular dynamics}, 
+year={2016}, 
+pages={682-689}, 
+keywords={integrated circuit modelling;system-on-chip;ARM CPU;Cortex-A15 core;Cortex-A57 core;Kepler core;LAMMPS;Maxwell core;NVIDIA GPU;Tegra K1 systems-on-chip;Tegra X1 systems-on-chip;classical molecular dynamics algorithm;energy consumption;floating-point performance;power consumption;roofline model toolkit;small-scale benchmark;supercomputer performance;Bandwidth;Benchmark testing;Computational modeling;Computer architecture;Graphics processing units;Hardware;Random access memory}, 
+doi={10.1109/HPCSim.2016.7568401}, 
+month={July},}
+
+@manual{NAMD-KComputer,
+note= {Akinori Yonezawa. ``Concurrent objects, agents and {HPC},'' AICS RIKEN, 2012. URL: \url{http://www.slideshare.net/AkinoriYonezawa/ageretalk}}
+}
+
+@inproceedings{NAMD-CrayXK6-2012,
+ author = {Sun, Yanhua and Zheng, Gengbin and Mei, Chao and Bohm, Eric J. and Phillips, James C. and Kal{\'e}, Laximant V. and Jones, Terry R.},
+ title = {Optimizing Fine-grained Communication in a Biomolecular Simulation Application on {Cray XK6}},
+ booktitle = {Proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis},
+ series = {SC '12},
+ year = {2012},
+ isbn = {978-1-4673-0804-5},
+ location = {Salt Lake City, Utah},
+ pages = {55:1--55:11},
+ articleno = {55},
+ numpages = {11},
+ url = {http://dl.acm.org/citation.cfm?id=2388996.2389071},
+ acmid = {2389071},
+ publisher = {IEEE Computer Society Press},
+ address = {Los Alamitos, CA, USA},
+} 
+
+@INPROCEEDINGS{NAMD-BlueGene-2013, 
+author={S. Kumar and Y. Sun and L. V. Kal{\'e}}, 
+booktitle={2013 IEEE 27th International Symposium on Parallel and Distributed Processing}, 
+title={Acceleration of an Asynchronous Message Driven Programming Paradigm on {IBM Blue Gene/Q}}, 
+year={2013}, 
+pages={689-699}, 
+doi={10.1109/IPDPS.2013.83}, 
+ISSN={1530-2075}, 
+month={May},}
+
+@inproceedings{Hohnerbach-2016,
+ author = {H\"{o}hnerbach, Markus and Ismail, Ahmed E. and Bientinesi, Paolo},
+ title = {The Vectorization of the {Tersoff} Multi-body Potential: An Exercise in Performance Portability},
+ booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+ series = {SC '16},
+ year = {2016},
+ isbn = {978-1-4673-8815-3},
+ location = {Salt Lake City, Utah},
+ pages = {7:1--7:13},
+ articleno = {7},
+ numpages = {13},
+ url = {http://dl.acm.org/citation.cfm?id=3014904.3014914},
+ acmid = {3014914},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+}
+
+
+
+
